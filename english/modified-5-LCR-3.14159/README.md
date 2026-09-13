@@ -58,6 +58,7 @@ Each file in `terms/` contains the pre-convergence sequence for one distinct gro
 | `terms/sequence_bfms.json` | b, f, m, s |
 | `terms/sequence_ln.json` | l, n |
 | `terms/sequence_tv.json` | t, v |
+| `terms/sequence_ir.json` | i, r |
 | `terms/sequence_a.json` | a |
 | `terms/sequence_c.json` | c |
 | ... | ... |
