@@ -41,6 +41,7 @@ For example:
   - **B = F = M = S** share one sequence.
   - **L = N** share one sequence.
   - **T = V** share one sequence.
+  - **I = R** share one sequence.
 
 Because of this, the number of distinct groups is not fixed at 16. It varies by encoding.
 
