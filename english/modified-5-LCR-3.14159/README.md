@@ -109,9 +109,6 @@ The same letter t under other English encodings produces different sequences and
 
 A single phonetic change in the mapping shifted the LCR from about 3.2099 to 3.141593223577. The paper reports this as an observation, not a method.
 
-## OEIS
-
-The letter t sequence for this encoding is drafted on OEIS as [A399854](https://oeis.org/A399854).
 
 ## Disclosure
 
