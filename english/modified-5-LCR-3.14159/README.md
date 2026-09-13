@@ -1,4 +1,3 @@
-
 # English — Modified #5 (LCR ≈ 3.14159)
 
 Fifth modified English phonetic encoding in the EOA-43 deterministic symbolic representation.
@@ -31,21 +30,38 @@ These are numerical diagnostics, not proofs of the limiting value.
 | `mapping.json` | Letter to group assignment for this encoding. |
 | `terms/` | Sequence files, one per distinct group. |
 
+## Groupings Are Encoding Dependent
+
+**Important:** The 26 letters do not group the same way in every encoding. The set of letters that share a sequence changes when the phonetic mapping changes.
+
+For example:
+
+- In the primary encoding, the group BDPTVZ contains b, d, p, t, v, z.
+- In the modified-5 encoding, the groupings are different:
+  - **B = F = M = S** share one sequence.
+  - **L = N** share one sequence.
+  - **T = V** share one sequence.
+
+Because of this, the number of distinct groups is not fixed at 16. It varies by encoding.
+
+**In this encoding (modified-5), there are 20 distinct sequence groups.**
+
+Always read `mapping.json` in the encoding folder for the authoritative grouping. Do not assume grouping carries over from one encoding to another.
+
 ## Terms Folder
 
-Each file in `terms/` contains the pre-convergence sequence for one distinct group of letters.
+Each file in `terms/` contains the pre-convergence sequence for one distinct group in this encoding.
 
 | File | Letters sharing this sequence |
 | :--- | :--- |
-| `terms/sequence_t.json` | b, d, p, t, v, z (group BDPTVZ) |
+| `terms/sequence_bfms.json` | b, f, m, s |
+| `terms/sequence_ln.json` | l, n |
+| `terms/sequence_tv.json` | t, v |
 | `terms/sequence_a.json` | a |
 | `terms/sequence_c.json` | c |
-| `terms/sequence_e.json` | e |
 | ... | ... |
 
-Letters that share a sequence are listed together. Singletons have their own file.
-
-Files with the letter suffix (e.g. `sequence_t.json`) are named for the representative letter of that group. The full letter list is in `mapping.json`.
+Files are named for the letters in the group. Singletons have their own file. The full list is in `mapping.json`.
 
 ## File Format
 
@@ -56,15 +72,15 @@ Each `terms/*.json` file follows this structure:
   "language": "english",
   "encoding": "modified-5",
   "lcr": 3.141593223577,
-  "group": "group-BDPTVZ",
-  "letters": ["b", "d", "p", "t", "v", "z"],
+  "group": "bfms",
+  "letters": ["b", "f", "m", "s"],
   "terms": [1, 3, 8, 26, 86, 276, 869, 2719]
 }
 ```
 
 - `terms` contains the sequence starting from the seed at index 0.
 - Terms are integers, listed in order.
-- No cap on length. Extended runs (500 or more terms) are available under access terms described in EOA Part I, Section 2.
+- Extended runs (500 or more terms) are available under access terms described in EOA Part I, Section 2.
 
 ## How to Generate a Word Vector
 
